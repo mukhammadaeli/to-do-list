@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script defer src="/index.js"></script>
+    <link rel="stylesheet" href="/style/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div id="app">
+
+            <div class="title">Foydalanuvchi kiritish</div>
+    
+            <div class="todo-main">
+                <input class="todo-input" @keyup.enter="addItem" v-model="newItem" placeholder="Yangi foydalanuvchi kiriting">
+                <button class="todo-btn" @click="addItem">Qo'shish</button>
+            </div>
+    
+            <ul class="todo-items" v-for="item in reversedItems">
+            
+                <li class="item">
+                    <div class="info">
+                        <span class="item-id">{{ item.id }}</span>
+                        <span class="item-name">{{ item.name }}</span>
+                    </div>
+                    <div class="edit">
+                        <!-- <button class="item-edit" @click="editItem(item)">Edit</span> -->
+                        <button class="item-del" @click="removeItem(item)">Delete</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
